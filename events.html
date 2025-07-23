@@ -30,23 +30,8 @@
 
 <body>
 
-    <header id="header" class="d-flex align-items-center">
-        <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><img src="assets/img/logo.png" alt="">
-                <a href="index.html">NU <span>Sanskriti</span></a>
-            </h1>
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link scrollto" href="./index.html">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto active" href="./events.html">Events</a></li>
-                    <li><a class="nav-link scrollto" href="./newstudent.html">New Students</a></li>
-                    <li><a class="nav-link scrollto" href="#featured-services">Teams</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Board</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                </ul>
-            </nav></div>
-    </header><div>
+    <!-- ======= Header (Dynamic Include) ======= -->
+    <div data-include="./navbar.html"></div>
         <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -85,61 +70,28 @@
     </div>
 
     <main id="main">
-        <div class="p-3 m-0 border-0">
-            <div class="section-title">
-                <h3>Upcoming <span>Events</span></h3>
-            </div>
-            <div id="upcoming-events-container" class="row row-cols-1 row-cols-md-3 g-4">
-                </div>
+        <div class="container py-5" style="background: #fff; color: #222; border-radius: 1.5rem; margin-top: 2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 32px rgba(7,59,76,0.08);">
+          <div class="text-center mb-4">
+            <h1 class="display-5 fw-bold mb-3" style="color: #800000;">Upcoming Events</h1>
+            <p class="lead mx-auto" style="max-width: 700px; color: #444;">Check out what's coming up next at NU Sanskriti! Join us for vibrant, creative, and community-driven experiences.</p>
+          </div>
+          <div id="upcoming-events-container" class="row g-4 justify-content-center"></div>
         </div>
 
-        <div class="p-3 m-0 border-0">
-            <div class="section-title">
-                <h3>Past <span>Events</span></h3>
-            </div>
-            <div id="past-events-container" class="row row-cols-1 row-cols-md-3 g-4">
-                </div>
+        <div class="container py-5" style="background: #f8fafc; border-radius: 1.2rem; margin-bottom: 2.5rem; box-shadow: 0 2px 12px rgba(7,59,76,0.04);">
+          <div class="text-center mb-4">
+            <h2 class="fw-bold mb-3" style="color: #800000;">Past Events</h2>
+            <p class="lead mx-auto" style="max-width: 700px; color: #444;">A look back at some of our favorite moments and milestones.</p>
+          </div>
+          <div id="past-events-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
         </div>
     </main>
 
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>NU <span>Sanskriti</span></h3>
-                        <p>
-                            Northeastern University<br>
-                            360 Huntington Ave<br>
-                            Boston, MA 02115<br><br>
-                            <strong>Email:</strong> namaste@nusanskriti.org<br>
-                        </p>
-                    </div>
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Social Networks</h4>
-                        <p>Do Follow Us!!</p>
-                        <div class="social-links mt-3">
-                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container py-4">
-            <div class="copyright">
-                &copy; Copyright <strong><span>NU Sanskriti</span></strong>. All Rights Reserved
-            </div>
-        </div>
-    </footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ======= Footer (Dynamic Include) ======= -->
+    <div data-include="footer.html"></div>
+    <script src="include.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         const SHEET_ID = '1pFNJixtEwa-SuSwKNkKS6lJ2QU5Csx1P5yqtn2Q6YoU';
@@ -398,14 +350,18 @@ function createEventCard(event) {
     // modalDescription is event[12]
     let modalDescription = event[12] && event[12].trim() ? event[12].trim() : '';
     const cardBody = `
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
             <h5 class="card-title">${event[0] || ''}</h5>
             ${countdownDiv}
             ${dateTimeVenue}
-            ${descDiv}
-            ${ticketButton}
-            ${reminderButton}
-            <button class="btn btn-outline-info w-100 mt-2" data-bs-toggle="modal" data-bs-target="#${modalId}">More Details</button>
+            <div style="flex:1 1 auto;">
+              ${descDiv}
+            </div>
+            <div class="mt-auto">
+              ${ticketButton}
+              ${reminderButton}
+              <button class="btn btn-outline-info w-100 mt-2" data-bs-toggle="modal" data-bs-target="#${modalId}">More Details</button>
+            </div>
         </div>
         <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}-label" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -458,24 +414,40 @@ function createEventCard(event) {
     }
     // Place stretched-link as first child of card
     const cardInner = `<div class="card h-100 position-relative event-card-clickable">${stretchedLink}${image}${cardBody}</div>`;
-    let cardContent = `<div class="col position-relative">${cardInner}</div>`;
+    let cardContent = `<div class="col d-flex align-items-stretch position-relative">${cardInner}</div>`;
     return cardContent;
 }
 
 // Add CSS for line clamp, clickable card, and fix z-index for inner buttons/links
+
 const style = document.createElement('style');
 style.innerHTML = `
+.event-card-clickable {
+  cursor: pointer;
+  width: 320px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 400px) {
+  .event-card-clickable {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+.event-card-clickable .card-img-top {
+  object-fit: cover;
+}
 .event-desc-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 3.6em;
-  max-height: 4.5em;
-}
-.event-card-clickable {
-  cursor: pointer;
+  word-break: break-word;
+  hyphens: auto;
 }
 .event-card-clickable .btn,
 .event-card-clickable a.btn,
@@ -621,6 +593,5 @@ document.head.appendChild(style);
                 document.getElementById('upcoming-events-container').innerHTML = '<p class="col-12 text-danger">Could not load events. Please try again later.</p>';
             });
     </script>
-
 </body>
 </html>

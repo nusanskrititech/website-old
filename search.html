@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results | NU Sanskriti</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div data-include="navbar.html"></div>
+  <div class="container py-5">
+    <h1 class="mb-4">Search Results</h1>
+    <div id="search-results" class="mt-4"></div>
+  </div>
+  <div data-include="footer.html"></div>
+  <script src="include.js"></script>
+  <script>
+    // Simple client-side search: looks for query in all h1, h2, h3, h4, h5, h6, p, a, li on the current page
+    function getQueryParam(name) {
+      const url = new URL(window.location.href);
+      return url.searchParams.get(name) || '';
+    }
+    const query = getQueryParam('q').trim().toLowerCase();
+    document.title = query ? `Search: ${query} | NU Sanskriti` : 'Search | NU Sanskriti';
+    if (!query) {
+      document.getElementById('search-results').innerHTML = '<div class="alert alert-info">Please enter a search term.</div>';
+    } else {
+      // List of pages to search
+      const pages = [
+        { title: 'Home', url: 'index.html' },
+        { title: 'About', url: 'about.html' },
+        { title: 'Events', url: 'events.html' },
+        { title: 'Join Us', url: 'joinus.html' },
+        { title: 'Board', url: 'board.html' },
+        { title: 'Sponsors', url: 'sponsors.html' },
+        { title: 'Contact', url: 'contact.html' },
+        { title: 'New Students', url: 'newstudent.html' }
+      ];
+      let found = [];
+      let checked = 0;
+      document.getElementById('search-results').innerHTML = '<div class="text-muted">Searching pages...</div>';
+      pages.forEach(page => {
+        fetch(page.url)
+          .then(res => res.text())
+          .then(html => {
+            // Remove scripts/styles and get text content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            // Try to get a meaningful title
+            page.title = doc.querySelector('title') ? doc.querySelector('title').innerText : page.title;
+            // Remove nav/footer/irrelevant
+            ['script','style','nav','footer','header'].forEach(sel => doc.querySelectorAll(sel).forEach(e => e.remove()));
+            const text = doc.body ? doc.body.innerText : '';
+            const lower = text.toLowerCase();
+            if (lower.includes(query)) {
+              // Find a snippet
+              let idx = lower.indexOf(query);
+              let start = Math.max(0, idx - 60);
+              let end = Math.min(text.length, idx + 60);
+              let snippet = text.substring(start, end).replace(/\s+/g, ' ');
+              // Highlight match
+              const re = new RegExp(`(${query.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'ig');
+              snippet = snippet.replace(re, '<mark>$1</mark>');
+              found.push({
+                url: page.url,
+                title: page.title,
+                snippet
+              });
+            }
+          })
+          .catch(() => {})
+          .finally(() => {
+            checked++;
+            if (checked === pages.length) {
+              if (found.length === 0) {
+                document.getElementById('search-results').innerHTML = `<div class="alert alert-warning">No results found for '<strong>${query}</strong>'.</div>`;
+              } else {
+                document.getElementById('search-results').innerHTML =
+                  '<ul class="list-group">' +
+                  found.map(r => `<li class="list-group-item"><a href="${r.url}"><strong>${r.title}</strong></a><br><small>${r.snippet}...</small></li>`).join('') +
+                  '</ul>';
+              }
+            }
+          });
+      });
+    }
+  </script>
+</body>
+</html>

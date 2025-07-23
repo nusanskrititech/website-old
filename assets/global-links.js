@@ -1,0 +1,62 @@
+// global-links.js
+// Dynamically fetches global links from a Google Sheet (CSV) and applies them to the page.
+// If the sheet is not found, uses the default values.
+
+const DEFAULT_LINKS = {
+  LINKEDIN_URL: "https://go.nusanskriti.org/linkedIn-website",
+  SLACK_URL: "https://go.nusanskriti.org/slack-website",
+  FACEBOOK_URL: "https://go.nusanskriti.org/facebook-website",
+  INSTAGRAM_URL: "https://go.nusanskriti.org/instagram-website",
+  CONTACT_EMAIL: "namaste@nusanskriti.org",
+  HOME_URL: "./index.html",
+  ABOUT_URL: "./about.html",
+  EVENTS_URL: "./events.html",
+  NEWSTUDENTS_URL: "./newstudent.html",
+  JOINUS_URL: "./joinus.html",
+  BOARD_URL: "./board.html",
+  SPONSORS_URL: "./sponsors.html",
+  CONTACT_URL: "./contact.html",
+  JOIN_THE_CREW_URL: "https://go.nusanskriti.org/join-the-crew-website",
+  JOINUS_POLICY_PDF_URL: "https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing"
+};
+
+// Replace with your published Google Sheet CSV URL, this contains the links
+// Make sure the sheet is public and the link is accessible
+// Example: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvP_w46vQTmLuJA7NfC4SwP8ij
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRvP_w46vQTmLuJA7NfC4SwP8ijgRQq7yyLTwdYDsQx9TMcmjzFdHvIiGHt5FgDWfjS2AnYH1pVUIQQ/pub?gid=0&single=true&output=csv";
+
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const obj = {};
+  for (let i = 1; i < lines.length; i++) {
+    const [key, ...rest] = lines[i].split(',');
+    obj[key.trim()] = rest.join(',').trim();
+  }
+  return obj;
+}
+
+function applyLinks(links) {
+  // Only update external/social/email links and 'jointhecrew'
+  document.querySelectorAll('[data-link="linkedin"]').forEach(el => el.href = links.LINKEDIN_URL);
+  document.querySelectorAll('[data-link="slack"]').forEach(el => el.href = links.SLACK_URL);
+  document.querySelectorAll('[data-link="facebook"]').forEach(el => el.href = links.FACEBOOK_URL);
+  document.querySelectorAll('[data-link="instagram"]').forEach(el => el.href = links.INSTAGRAM_URL);
+
+  // Email
+  document.querySelectorAll('[data-link="email"]').forEach(el => {
+    el.textContent = links.CONTACT_EMAIL;
+    if (el.tagName === 'A') el.href = 'mailto:' + links.CONTACT_EMAIL;
+  });
+
+  // Only update 'jointhecrew' button dynamically
+  document.querySelectorAll('[data-link="jointhecrew"]').forEach(el => el.href = links.JOIN_THE_CREW_URL);
+}
+
+function fetchAndApplyLinks() {
+  fetch(SHEET_CSV_URL)
+    .then(res => res.ok ? res.text() : Promise.reject())
+    .then(csv => applyLinks({...DEFAULT_LINKS, ...parseCSV(csv)}))
+    .catch(() => applyLinks(DEFAULT_LINKS));
+}
+
+document.addEventListener('DOMContentLoaded', fetchAndApplyLinks);

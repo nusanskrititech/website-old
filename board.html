@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="theme-color" content="#000000" />
+  <title>Board | NU Sanskriti</title>
+  <meta content="Board Members NU Sanskriti Northeastern University" name="description">
+  <meta content="NU Sanskriti Northeastern University" name="keywords">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Dancing+Script" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+  <!-- ======= Header ======= -->
+<div data-include="./navbar.html"></div>
+  <!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center position-relative" style="background: url('assets/img/new_student_hero.jpg') center center/cover no-repeat; min-height: 60vh;">
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.45); z-index:1;"></div>
+    <div class="container position-relative" style="z-index:2;">
+      <h1 style="color:#fff; text-shadow:0 2px 8px rgba(0,0,0,0.7);">Our Board</h1>
+      <h2 style="color:#fff; text-shadow:0 2px 8px rgba(0,0,0,0.6);">Meet the hardworking board members of NU Sanskriti.<br>Together we can do so much!</h2>
+      <div class="d-flex">
+        <a href="#board-section" class="btn-get-started scrollto">Meet the Board</a>
+      </div>
+    </div>
+  </section>
+  <!-- ======= Board Section ======= -->
+  <main id="main">
+    <section id="board-section" class="team section-bg py-5">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title-white">
+          <h3>Our Hardworking <span>Board Members</span></h3>
+          <p>Alone we can do so little; together we can do so much.</p>
+        </div>
+        <div class="row" id="team-members-row">
+          <!-- Team members will be loaded here dynamically -->
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>NU <span>Sanskriti</span></h3>
+            <p>
+              Northeastern University<br>
+              360 Huntington Ave<br>
+              Boston, MA 02115<br><br>
+              <strong>Email:</strong> namaste@nusanskriti.org<br>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="events.html">Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Do Follow Us!!</p>
+            <div class="social-links mt-3">
+              <a href="https://go.nusanskriti.org/linkedIn-website" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://go.nusanskriti.org/slack-website" class="slack"><i class="bx bxl-slack"></i></a>
+              <a href="https://go.nusanskriti.org/facebook-website" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://go.nusanskriti.org/instagram-website" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NU Sanskriti</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+  <script src="include.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script>
+    // Google Sheet as JSON endpoint (public)
+    const TEAM_SHEET_ID = '157nPStTsFD1ILCK19YNBmw2Mz_h2OPWyguUmOaEqcDI';
+    const TEAM_SHEET_GID = '0';
+    const TEAM_JSON_URL = `https://docs.google.com/spreadsheets/d/${TEAM_SHEET_ID}/gviz/tq?tqx=out:json&gid=${TEAM_SHEET_GID}`;
+    function parseDriveImage(url) {
+      if (!url) return 'assets/img/cs.jpg';
+      const match = url.match(/\/d\/([\w-]+)\//);
+      if (match && match[1]) {
+        return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1000`;
+      }
+      return url;
+    }
+    function formatLink(url, prefix) {
+      if (!url) return null;
+      if (url.startsWith('http')) return url;
+      return prefix + url;
+    }
+    function createTeamMemberCard(member) {
+      const name = member[0] || '';
+      const position = member[1] || '';
+      const photo = parseDriveImage(member[2]);
+      const linkedin = formatLink(member[3], 'https://');
+      const instagram = formatLink(member[4], 'https://');
+      const email = member[5] || '';
+      return `
+        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+              <img src="${photo}" class="img-fluid" alt="${name}" referrerPolicy="no-referrer">
+              <div class="social">
+                ${linkedin ? `<a href="${linkedin}" target="_blank"><i class="bi bi-linkedin"></i></a>` : ''}
+                ${instagram ? `<a href="${instagram}" target="_blank"><i class="bi bi-instagram"></i></a>` : ''}
+                ${email ? `<a href="mailto:${email}" target="_blank"><i class="bi bi-envelope"></i></a>` : ''}
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>${name}</h4>
+              <span>${position}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    function loadTeamMembers() {
+      fetch(TEAM_JSON_URL)
+        .then(res => res.text())
+        .then(text => {
+          const json = JSON.parse(text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1));
+          const rows = json.table.rows;
+          const members = rows.map(row => row.c.map(cell => cell ? cell.v : ''));
+          const header = members[0];
+          if (header && header[0] && header[0].toLowerCase().includes('name')) {
+            members.shift();
+          }
+          const html = members.filter(m => m[0]).map(createTeamMemberCard).join('');
+          document.getElementById('team-members-row').innerHTML = html;
+        })
+        .catch(err => {
+          document.getElementById('team-members-row').innerHTML = '<div class="col-12">Could not load team data.</div>';
+          console.error('Failed to load team:', err);
+        });
+    }
+    document.addEventListener('DOMContentLoaded', loadTeamMembers);
+  </script>
+</body>
+</html>

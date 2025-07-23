@@ -33,25 +33,8 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><img src="assets/img/logo.png" alt="">
-        <a href="index.html">NU <span>Sanskriti</span></a></h1>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="events.html">Events</a></li>
-          <li><a class="nav-link scrollto" href="newstudent.html">New Students</a></li>
-          <li><a class="nav-link scrollto active" href="joinus.html">Join Us</a></li>
-          <li><a class="nav-link scrollto" href="index.html#team">Board</a></li>
-          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-    </div>
-  </header>
+  <!-- ======= Header (Dynamic Include) ======= -->
+  <div data-include="./navbar.html"></div>
   <!-- ======= Carousel Section (copied from events.html) ======= -->
   <div>
     <div id="carouselExampleCaptions" class="carousel slide">
@@ -92,156 +75,163 @@
   </div>
   <!-- ======= Main Content ======= -->
   <main id="main">
-    <div class="p-3 m-0 border-0">
-      <div class="section-title">
-        <h3>Join <span>Us</span></h3>
-        <p>Discover our teams and how you can contribute to NU Sanskriti!<br>We welcome passionate students to join us in organizing events, promoting culture, and building a vibrant community at Northeastern University.</p>
+    <div class="container py-5" style="background: #fff; color: #222; border-radius: 1.5rem; margin-top: -2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 32px rgba(7,59,76,0.08);">
+      <div class="text-center mb-4">
+        <div style="font-family: 'Samarkan', cursive; font-size: 2.5rem; color: #800000; opacity: 0.92; margin-bottom: 0.5rem;">NU Sanskriti</div>
+        <h1 class="display-5 fw-bold mb-3" style="color: #800000;">Join your Gateway to Community & Career</h1>
+        <p class="lead mx-auto" style="max-width: 700px; color: #444;">Join a network of like-minded students, future professionals, and friends who become family. NU Sanskriti is your home away from home—and your launchpad for success at Northeastern and beyond. Every member helps shape campus life, inspire others, and create lasting change. Here’s how your involvement leaves a mark—on campus and beyond.</p>
       </div>
-      <div class="mb-4 text-center">
-        <h4 class="mb-3">How to Join</h4>
-        <ul class="list-unstyled d-inline-block text-start mb-3" style="max-width: 500px;">
-          <li class="mb-2"><i class="bi bi-search text-primary"></i> Browse the teams below and find your area of interest.</li>
-          <li class="mb-2"><i class="bi bi-person-plus text-success"></i> Click the <b>Join</b> button on a team to apply.</li>
-          <li class="mb-2"><i class="bi bi-instagram text-danger"></i> <i class="bi bi-linkedin text-primary"></i> Follow us on <a href="https://go.nusanskriti.org/instagram-website" target="_blank">Instagram</a> and <a href="https://go.nusanskriti.org/linkedIn-website" target="_blank">LinkedIn</a> for updates on open positions and recruitment drives.</li>
-          <li class="mb-2"><i class="bi bi-envelope text-secondary"></i> For any questions, email us at <a href="mailto:namaste@nusanskriti.org">namaste@nusanskriti.org</a>.</li>
-        </ul>
-        <div class="d-flex justify-content-center">
-          <a href="https://go.nusanskriti.org/join-the-crew-website" target="_blank" class="btn btn-success btn-lg shadow-sm px-4 py-2 animate__animated animate__pulse animate__infinite"><i class="bi bi-stars"></i> Join the Crew</a>
+      <div class="row g-4 justify-content-center mb-4">
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 text-center bg-light border h-100">
+            <div class="fw-bold" style="font-size:2.5rem; color:#06D6A0;">20000+</div>
+            <div class="mt-2" style="color:#333; font-size:1.1rem;">Members & Alumni</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 text-center bg-light border h-100">
+            <div class="fw-bold" style="font-size:2.5rem; color:#FFD166;">100+</div>
+            <div class="mt-2" style="color:#333; font-size:1.1rem;">Professional Connections</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-4 rounded-4 text-center bg-light border h-100">
+            <div class="fw-bold" style="font-size:2.5rem; color:#118AB2;">∞</div>
+            <div class="mt-2" style="color:#333; font-size:1.1rem;">Opportunities</div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center mb-4">
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 text-center benefit-card bg-white border h-100">
+            <div style="font-size:2.5rem;">🌏</div>
+            <h3 class="h5 fw-bold mb-2" style="color:#800000;">Home Away from Home</h3>
+            <p style="color:#444;">Find your community, celebrate your culture, and make friends who feel like family—no matter how far you are from home.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 text-center benefit-card bg-white border h-100">
+            <div style="font-size:2.5rem;">💼</div>
+            <h3 class="h5 fw-bold mb-2" style="color:#800000;">Network & Grow</h3>
+            <p style="color:#444;">Connect with peers, alumni, and professionals. Gain leadership, teamwork, and event skills that set you apart in your career.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="p-4 rounded-4 text-center benefit-card bg-white border h-100">
+            <div style="font-size:2.5rem;">�</div>
+            <h3 class="h5 fw-bold mb-2" style="color:#800000;">Like-Minded Community</h3>
+            <p style="color:#444;">Meet ambitious, creative, and supportive students who share your values and dreams. Build a network for life.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center mb-4">
+        <div class="col-12">
+          <div class="mb-4 text-center">
+            <a data-link="jointhecrew" target="_blank" class="btn btn-warning btn-xl fw-bold shadow-lg px-5 py-3 animate__animated animate__pulse animate__infinite" style="font-size:1.5rem; border-radius:2rem; box-shadow:0 4px 24px rgba(255,193,7,0.18); letter-spacing:1px;">
+              <i class="bi bi-stars me-2"></i>Join NU Sanskriti
+            </a>
+            <div class="mt-2 text-muted" style="font-size:1rem;">Open to all students – no experience required!</div>
+          </div>
         </div>
       </div>
       <div id="teams-row" class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-        <!-- Teams will be loaded here dynamically -->
       </div>
-    </div>
-  </main>
-  <script>
-    // Google Sheet as JSON endpoint (public) for teams
-    const TEAMS_SHEET_ID = '1HIh7D24Een-jggUZ1WO6PgCHK6fAaSMP5noWLMnULmM';
-    const TEAMS_SHEET_GID = '0';
-    const TEAMS_JSON_URL = `https://docs.google.com/spreadsheets/d/${TEAMS_SHEET_ID}/gviz/tq?tqx=out:json&gid=${TEAMS_SHEET_GID}`;
-
-    function parseDriveImage(url) {
-      if (!url) return 'assets/img/cs.jpg';
-      const match = url.match(/\/d\/([\w-]+)\//);
-      if (match && match[1]) {
-        return `https://drive.google.com/thumbnail?id=${match[1]}&sz=w600`;
-      }
-      return url;
-    }
-
-    function createTeamCard(team) {
-      const name = team[0] || '';
-      const desc = team[1] || '';
-      const contact = team[2] || '';
-      const image = parseDriveImage(team[3]);
-      const joinLink = team[4] || '';
-      return `
-        <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-          <div class="card h-100 shadow team-card-hover">
-            <img src="${image}" class="card-img-top" alt="${name}" style="object-fit:cover; height:220px; border-radius: 0.5rem 0.5rem 0 0;">
-            <div class="card-body d-flex flex-column align-items-center text-center">
-              <h5 class="card-title mb-2">${name}</h5>
-              <p class="card-text flex-grow-1 mb-2">${desc}</p>
-              <div class="d-flex flex-column gap-2 w-100">
-                ${joinLink ? `<a href="${joinLink}" target="_blank" class="btn btn-primary w-100"><i class='bi bi-person-plus'></i> Join</a>` : ''}
-                ${contact ? `<a href="mailto:${contact}" class="btn btn-outline-secondary w-100"><i class='bi bi-envelope'></i> Email</a>` : ''}
-              </div>
+      <!-- ======= Portfolios Section ======= -->
+      <div class="container py-4" style="background: #f8fafc; border-radius: 1.2rem; margin-bottom: 2.5rem; box-shadow: 0 2px 12px rgba(7,59,76,0.04);">
+        <div class="text-center mb-4">
+          <h2 class="fw-bold mb-3" style="color: #800000;">Explore Our Portfolios</h2>
+          <p class="lead mx-auto" style="max-width: 700px; color: #444;">Find your passion! We have a place for every talent and interest. Here are some of the portfolios you can join:</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#FFD166;">🎨</div>
+              <h4 class="fw-bold mb-2">Creative Team / Decor</h4>
+              <p class="mb-0">Design event spaces, create decor, and bring creative ideas to life for every celebration.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#A259FF;">✍️</div>
+              <h4 class="fw-bold mb-2">Creative Writers</h4>
+              <p class="mb-0">Craft engaging stories, articles, and content for our website, social media, and events.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#118AB2;">💃</div>
+              <h4 class="fw-bold mb-2">Dance</h4>
+              <p class="mb-0">Choreograph, perform, or coordinate dance performances for our cultural events.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#38BDF8;">🎤</div>
+              <h4 class="fw-bold mb-2">Events / Logistics</h4>
+              <p class="mb-0">Plan, organize, and ensure smooth execution of all our events and activities.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#E75480;">👗</div>
+              <h4 class="fw-bold mb-2">Fashion</h4>
+              <p class="mb-0">Showcase style, coordinate fashion shows, and help with costumes for events.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#FFD700;">🎶</div>
+              <h4 class="fw-bold mb-2">Music</h4>
+              <p class="mb-0">Perform, coordinate, or manage music for events and cultural programs.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#EF476F;">�</div>
+              <h4 class="fw-bold mb-2">Photography</h4>
+              <p class="mb-0">Capture moments, cover events, and create visual stories for our community.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#06D6A0;">�️</div>
+              <h4 class="fw-bold mb-2">Planning & Schedule Coordinator</h4>
+              <p class="mb-0">Coordinate event timelines, schedules, and ensure everything runs on time.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#EF476F;">�</div>
+              <h4 class="fw-bold mb-2">Promotions and Marketing</h4>
+              <p class="mb-0">Promote events, manage campaigns, and help grow our community reach.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#FFD700;">🗣️</div>
+              <h4 class="fw-bold mb-2">Public Relations</h4>
+              <p class="mb-0">Be the voice of Sanskriti, handle communications, and engage with the student body.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="p-4 rounded-4 text-center bg-white border h-100">
+              <div style="font-size:2.2rem; color:#800000;">�</div>
+              <h4 class="fw-bold mb-2">Webmaster</h4>
+              <p class="mb-0">Develop, update, and maintain our website and digital presence.</p>
             </div>
           </div>
         </div>
-      `;
-    }
-    // Add a little CSS for card hover and smoothness
-    const joinusStyle = document.createElement('style');
-    joinusStyle.innerHTML = `
-      .team-card-hover {
-        transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      }
-      .team-card-hover:hover {
-        transform: translateY(-8px) scale(1.03);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.13);
-        z-index: 2;
-      }
-      .btn-primary, .btn-outline-secondary {
-        transition: box-shadow 0.15s, background 0.15s, color 0.15s;
-      }
-      .btn-primary:hover, .btn-outline-secondary:hover {
-        box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-      }
-      .section-title h3, .section-title h4 {
-        letter-spacing: 0.5px;
-      }
-      .section-title {
-        margin-bottom: 2rem;
-      }
-    `;
-    document.head.appendChild(joinusStyle);
-
-    function loadTeams() {
-      fetch(TEAMS_JSON_URL)
-        .then(res => res.text())
-        .then(text => {
-          const json = JSON.parse(text.substring(text.indexOf('{'), text.lastIndexOf('}') + 1));
-          const rows = json.table.rows;
-          let teams = rows.map(row => row.c.map(cell => cell ? cell.v : ''));
-          // Remove header row if present
-          const header = teams[0];
-          if (header && header[0] && header[0].toLowerCase().includes('name')) {
-            teams.shift();
-          }
-          // Only show teams with a name
-          const html = teams.filter(t => t[0]).map(createTeamCard).join('');
-          document.getElementById('teams-row').innerHTML = html;
-        })
-        .catch(err => {
-          document.getElementById('teams-row').innerHTML = '<div class="col-12">Could not load teams data.</div>';
-          console.error('Failed to load teams:', err);
-        });
-    }
-    document.addEventListener('DOMContentLoaded', loadTeams);
-  </script>
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>NU <span>Sanskriti</span></h3>
-            <p>
-              Northeastern University<br>
-              360 Huntington Ave<br>
-               Boston, MA 02115<br><br>
-              <strong>Email:</strong>namaste@nusanskriti.org<br>
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="joinus.html">Join Us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-<div class="col-lg-3 col-md-6 footer-links">
-  <h4>Our Social Networks</h4>
-  <p>Do Follow Us!!</p>
-  <div class="social-links mt-3">
-    <a href="https://go.nusanskriti.org/linkedIn-website" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-    <a href="https://go.nusanskriti.org/slack-website" class="slack"><i class="bx bxl-slack"></i></a>
-    <a href="https://go.nusanskriti.org/facebook-website" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-    <a href="https://go.nusanskriti.org/instagram-website" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-  </div>
-</div>
-        <div class="container py-4">
-          <div class="copyright">
-            &copy; Copyright <strong><span>NU Sanskriti</span></strong>. All Rights Reserved
-          </div>
-        </div>
+      </div>
       </div>
     </div>
-  </footer>
+
+  </main>
+  <script>
+    // (Dynamic teams section removed as requested)
+  </script>
+  <!-- ======= Footer (Dynamic Include) ======= -->
+  <div data-include="footer.html"></div>
+  <script src="include.js"></script>
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
@@ -253,6 +243,7 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/global-links.js"></script>
+  <script src="assets/js/main.js"></script> 
 </body>
 </html>

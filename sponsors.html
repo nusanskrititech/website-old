@@ -25,26 +25,8 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><img src="assets/img/logo.png" alt="">
-        <a href="index.html">NU <span>Sanskriti</span></a></h1>
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
-          <li><a class="nav-link scrollto" href="events.html">Events</a></li>
-          <li><a class="nav-link scrollto" href="newstudent.html">New Students</a></li>
-          <li><a class="nav-link scrollto" href="joinus.html">Join Us</a></li>
-          <li><a class="nav-link scrollto" href="index.html#team">Board</a></li>
-          <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
-          <li><a class="nav-link scrollto active" href="sponsors.html">Sponsors</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-    </div>
-  </header>
+  <!-- ======= Header (Dynamic Include) ======= -->
+  <div data-include="navbar.html"></div>
   <!-- ======= Top Banner Image ======= -->
   <div class="container-fluid p-0">
     <img src="assets/img/caraousel/Copy of Holi-34.jpg" alt="Holi Banner" class="img-fluid w-100" style="max-height:340px; object-fit:cover; object-position:center; background:#f8f9fa;">
@@ -220,12 +202,12 @@
       return `
         <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex align-items-stretch">
           <div class="card border-0 bg-transparent align-items-center justify-content-center sponsor-card-hover h-100 p-2">
-            <a href="${link || '#'}" target="_blank" rel="noopener" class="d-block w-100 h-100 text-center">
+            <div class="d-block w-100 h-100 text-center">
               <div class="sponsor-logo-wrap d-flex align-items-center justify-content-center mb-2">
                 <img src="${logo}" alt="${name}" class="img-fluid" style="max-height: 70px; max-width: 100%; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.07)); background: #fff; border-radius: 0.5rem; padding: 0.5rem;">
               </div>
               <div class="small text-muted">${name}</div>
-            </a>
+            </div>
           </div>
         </div>
       `;
@@ -243,8 +225,12 @@
           if (header && header[0] && header[0].toLowerCase().includes('name')) {
             sponsors.shift();
           }
-          // Only show sponsors with a name (ignore 'active' field)
+           // Only show sponsors with a name (ignore 'active' field)
           const html = sponsors.filter(s => s[0]).map(createSponsorCard).join('');
+
+          
+          // Only show sponsors with a name (ignore 'active' field)
+          //const html = sponsors.filter(s => s[0]).map(createSponsorCard).join('');
           document.getElementById('sponsors-row').innerHTML = html;
         })
         .catch(err => {
@@ -283,47 +269,9 @@
     document.head.appendChild(sponsorsStyle);
   </script>
   <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>NU <span>Sanskriti</span></h3>
-            <p>
-              Northeastern University<br>
-              360 Huntington Ave<br>
-               Boston, MA 02115<br><br>
-              <strong>Email:</strong>namaste@nusanskriti.org<br>
-            </p>
-          </div>
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="joinus.html">Join Us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Do Follow Us!!</p>
-            <div class="social-links mt-3">
-              <a href="https://go.nusanskriti.org/linkedIn-website" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://go.nusanskriti.org/slack-website" class="slack"><i class="bx bxl-slack"></i></a>
-              <a href="https://go.nusanskriti.org/facebook-website" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="https://go.nusanskriti.org/instagram-website" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
-            </div>
-          </div>
-          <div class="container py-4">
-            <div class="copyright">
-              &copy; Copyright <strong><span>NU Sanskriti</span></strong>. All Rights Reserved
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- ======= Footer (Dynamic Include) ======= -->
+  <div data-include="footer.html"></div>
+  <script src="include.js"></script>
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
