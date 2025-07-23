@@ -17,7 +17,8 @@ const DEFAULT_LINKS = {
   SPONSORS_URL: "./sponsors.html",
   CONTACT_URL: "./contact.html",
   JOIN_THE_CREW_URL: "https://go.nusanskriti.org/join-the-crew-website",
-  JOINUS_POLICY_PDF_URL: "https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing"
+  JOINUS_POLICY_PDF_URL: "https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing",
+  GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN"
 };
 
 // Replace with your published Google Sheet CSV URL, this contains the links
@@ -59,4 +60,34 @@ function fetchAndApplyLinks() {
     .catch(() => applyLinks(DEFAULT_LINKS));
 }
 
-document.addEventListener('DOMContentLoaded', fetchAndApplyLinks);
+// Initialize Google Analytics
+function initializeGoogleAnalytics(links) {
+  if (links.GOOGLE_ANALYTICS_ID && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    // Create and load gtag script
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${links.GOOGLE_ANALYTICS_ID}`;
+    document.head.appendChild(script);
+
+    // Initialize gtag
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', links.GOOGLE_ANALYTICS_ID);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch(SHEET_CSV_URL)
+    .then(res => res.ok ? res.text() : Promise.reject())
+    .then(csv => {
+      const combinedLinks = {...DEFAULT_LINKS, ...parseCSV(csv)};
+      applyLinks(combinedLinks);
+      initializeGoogleAnalytics(combinedLinks);
+    })
+    .catch(() => {
+      applyLinks(DEFAULT_LINKS);
+      initializeGoogleAnalytics(DEFAULT_LINKS);
+    });
+});
