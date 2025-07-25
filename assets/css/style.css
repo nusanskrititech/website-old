@@ -498,6 +498,47 @@ h6 {
   font-size: 12px;
 }
 
+/* Mobile Navigation Improvements */
+@media (max-width: 991px) {
+  .navbar-mobile form {
+    margin: 10px 20px;
+    padding: 10px 0;
+  }
+  
+  .navbar-mobile form input {
+    width: 100% !important;
+    max-width: none !important;
+    margin-bottom: 10px;
+  }
+  
+  .navbar-mobile form button {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  
+  .mobile-nav-toggle {
+    z-index: 1001;
+    position: relative;
+  }
+  
+  .navbar-mobile {
+    z-index: 1000;
+  }
+}
+
+/* Ensure mobile nav items are touchable */
+.navbar-mobile a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  touch-action: manipulation;
+}
+
+.mobile-nav-toggle {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
@@ -1797,7 +1838,7 @@ section {
 
 #footer .footer-newsletter {
   padding: 50px 0;
-  background: #00000;
+  background: #000000;
   text-align: center;
   font-size: 15px;
 }
@@ -1812,7 +1853,7 @@ section {
 
 #footer .footer-newsletter form {
   margin-top: 30px;
-  background: #00000;
+  background: #000000;
   padding: 6px 10px;
   position: relative;
   border-radius: 4px;
@@ -1848,7 +1889,7 @@ section {
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #00000;
+  background: #000000;
 }
 
 #footer .footer-top .footer-contact {
@@ -1927,7 +1968,7 @@ section {
   font-size: 18px;
   display: inline-block;
   background: #000000 ;
-  color: #00000;
+  color: #000000;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -1940,7 +1981,7 @@ section {
 
 #footer .footer-top .social-links a:hover {
   background: #106eea;
-  color: #00000;
+  color: #000000;
   text-decoration: none;
 }
 
