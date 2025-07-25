@@ -600,5 +600,20 @@ document.head.appendChild(style);
                 document.getElementById('upcoming-events-container').innerHTML = '<p class="col-12 text-danger">Could not load events. Please try again later.</p>';
             });
     </script>
+  <script>
+    // Fallback: If main.js is loaded in <head>, re-attach it at the end of <body> for nav toggle to work
+    (function() {
+      var scripts = document.querySelectorAll('script[src*="assets/js/main.js"]');
+      var found = false;
+      scripts.forEach(function(s) {
+        if (s.parentNode.tagName.toLowerCase() === 'body') found = true;
+      });
+      if (!found) {
+        var s = document.createElement('script');
+        s.src = 'assets/js/main.js';
+        document.body.appendChild(s);
+      }
+    })();
+  </script>
 </body>
 </html>

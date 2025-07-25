@@ -4,9 +4,9 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-(function() {
-  "use strict";
 
+document.addEventListener('DOMContentLoaded', function() {
+  "use strict";
   /**
    * Easy selector helper function
    */
@@ -114,15 +114,31 @@
     onscroll(document, toggleBacktotop)
   }
 
+
   /**
    * Mobile nav toggle
+   * Use both direct and delegated event for robustness
    */
   on('click', '.mobile-nav-toggle', function(e) {
+    console.log('Mobile nav toggle clicked');
     select('#navbar').classList.toggle('navbar-mobile')
     const icon = this.querySelector('i') || this;
     icon.classList.toggle('bi-list')
     icon.classList.toggle('bi-x')
   })
+
+  // Fallback: event delegation for mobile nav toggle (in case script loads before button exists)
+  document.body.addEventListener('click', function(e) {
+    const btn = e.target.closest('.mobile-nav-toggle');
+    if (btn) {
+      console.log('Mobile nav toggle clicked (delegated)');
+      select('#navbar').classList.toggle('navbar-mobile');
+      const icon = btn.querySelector('i') || btn;
+      icon.classList.toggle('bi-list');
+      icon.classList.toggle('bi-x');
+      e.preventDefault();
+    }
+  });
 
   /**
    * Mobile nav dropdowns activate
@@ -285,26 +301,22 @@
   /**
    * Initiate Pure Counter 
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') {
+    new PureCounter();
+  }
 
-})()
-
-
-var faq = document.getElementsByClassName("faq-page");
-var i;
-
-for (i = 0; i < faq.length; i++) {
-    faq[i].addEventListener("click", function () {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-        this.classList.toggle("active");
-
-        /* Toggle between hiding and showing the active panel */
-        var body = this.nextElementSibling;
-        if (body.style.display === "block") {
-            body.style.display = "none";
-        } else {
-            body.style.display = "block";
-        }
-    });
-}
+  // --- PureCounter and FAQ code commented out to prevent JS errors ---
+  // var faq = document.getElementsByClassName("faq-page");
+  // var i;
+  // for (i = 0; i < faq.length; i++) {
+  //     faq[i].addEventListener("click", function () {
+  //         this.classList.toggle("active");
+  //         var body = this.nextElementSibling;
+  //         if (body.style.display === "block") {
+  //             body.style.display = "none";
+  //         } else {
+  //             body.style.display = "block";
+  //         }
+  //     });
+  // }
+});
