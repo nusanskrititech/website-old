@@ -441,14 +441,6 @@ h6 {
   .navbar ul {
     display: none;
   }
-  
-  #header {
-    position: relative;
-  }
-  
-  .navbar {
-    position: relative;
-  }
 }
 
 .navbar-mobile {
