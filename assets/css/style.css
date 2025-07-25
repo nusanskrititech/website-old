@@ -447,12 +447,17 @@ h6 {
   position: fixed;
   overflow: hidden;
   top: 0;
-  right: 25%;
+  right: 0;
   left: 0;
   bottom: 0;
   background: rgba(9, 9, 9, 0.9);
   transition: 0.3s;
   z-index: 999;
+  display: none;
+}
+
+.navbar-mobile.navbar-mobile {
+  display: block;
 }
 
 .navbar-mobile .mobile-nav-toggle {
@@ -484,9 +489,29 @@ h6 {
 
 .navbar-mobile a,
 .navbar-mobile a:focus {
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 15px 20px;
+  font-size: 16px;
   color: #000000;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s;
+}
+
+.navbar-mobile a:hover {
+  background-color: #f8f9fa;
+  color: #106eea;
+  text-decoration: none;
+}
+
+.navbar-mobile li {
+  display: block;
+  width: 100%;
+}
+
+.navbar-mobile form {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .navbar-mobile>ul>li {
