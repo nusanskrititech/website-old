@@ -18,8 +18,11 @@ const DEFAULT_LINKS = {
   CONTACT_URL: "./contact.html",
   JOIN_THE_CREW_URL: "https://go.nusanskriti.org/join-the-crew-website",
   JOINUS_POLICY_PDF_URL: "https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing",
-  GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN" //for temporary.nusanskriti.org
+  GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN", //for temporary.nusanskriti.org
   //GOOGLE_ANALYTICS_ID: "G-QP94LJCKGP" // for nusanskriti.org 
+  VERSION: "v2.1.0",
+  BUILD_DATE: "2025-07-25",
+  BUILD_ID: "dev-mobile-fixes"
 };
 
 // Replace with your published Google Sheet CSV URL, this contains the links
@@ -52,6 +55,21 @@ function applyLinks(links) {
 
   // Only update 'jointhecrew' button dynamically
   document.querySelectorAll('[data-link="jointhecrew"]').forEach(el => el.href = links.JOIN_THE_CREW_URL);
+  
+  // Update version information
+  updateVersionInfo(links);
+}
+
+function updateVersionInfo(links) {
+  // Add version info to footer if version container exists
+  const versionContainer = document.getElementById('version-info');
+  if (versionContainer) {
+    versionContainer.innerHTML = `
+      <small class="text-muted">
+        ${links.VERSION} | Build: ${links.BUILD_ID} | ${links.BUILD_DATE}
+      </small>
+    `;
+  }
 }
 
 function fetchAndApplyLinks() {
