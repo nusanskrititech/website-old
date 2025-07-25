@@ -119,8 +119,9 @@
    */
   on('click', '.mobile-nav-toggle', function(e) {
     select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
+    const icon = this.querySelector('i') || this;
+    icon.classList.toggle('bi-list')
+    icon.classList.toggle('bi-x')
   })
 
   /**
@@ -144,8 +145,9 @@
       if (navbar.classList.contains('navbar-mobile')) {
         navbar.classList.remove('navbar-mobile')
         let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
+        const icon = navbarToggle.querySelector('i') || navbarToggle;
+        icon.classList.remove('bi-x')
+        icon.classList.add('bi-list')
       }
       scrollto(this.hash)
     }
