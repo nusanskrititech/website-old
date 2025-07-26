@@ -22,9 +22,9 @@ const DEFAULT_LINKS = {
   CHAT_POLICY_LINK: "",
   //GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN", //for temporary.nusanskriti.org
   GOOGLE_ANALYTICS_ID: "G-QP94LJCKGP" // for nusanskriti.org 
-  VERSION: "v2.1.3",
+  VERSION: "v2.1.4",
   BUILD_DATE: "2025-07-25",
-  BUILD_ID: "navbar-click-fix"
+  BUILD_ID: "mltp-fix"
 };
 
 // Replace with your published Google Sheet CSV URL, this contains the links
