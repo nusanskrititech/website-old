@@ -20,11 +20,11 @@ const DEFAULT_LINKS = {
   JOINUS_POLICY_PDF_URL: "https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing",
   WHATSAPP_COMMUNITY_LINK: "./whatsapp.html",
   CHAT_POLICY_LINK: "",
-  GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN", //for temporary.nusanskriti.org
-  //GOOGLE_ANALYTICS_ID: "G-QP94LJCKGP" // for nusanskriti.org 
-  VERSION: "v2.1.3",
+  //GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN", //for temporary.nusanskriti.org
+  GOOGLE_ANALYTICS_ID: "G-QP94LJCKGP" // for nusanskriti.org 
+  VERSION: "v2.1.4",
   BUILD_DATE: "2025-07-25",
-  BUILD_ID: "navbar-click-fix"
+  BUILD_ID: "mltp-fix"
 };
 
 // Replace with your published Google Sheet CSV URL, this contains the links
