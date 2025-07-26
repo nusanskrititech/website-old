@@ -1,8 +1,13 @@
 <!-- navbar.html: Place this file in the root or a shared folder like 'partials/' -->
 <header id="header" class="d-flex align-items-center">
   <div class="container d-flex align-items-center justify-content-between">
-    <h1 class="logo"><img src="assets/img/logo.png" alt="">
-      <a href="index.html">NU <span>Sanskriti</span></a></h1>
+    <h1 class="logo">
+      <picture>
+        <source srcset="assets/img/logo.webp" type="image/webp">
+        <img src="assets/img/logo.png" alt="Logo" class="navbar-brand-img" loading="lazy" referrerpolicy="no-referrer">
+      </picture>
+      <a href="index.html">NU <span>Sanskriti</span></a>
+    </h1>
     <nav id="navbar" class="navbar">
       <ul class="align-items-center">
         <li><a class="nav-link scrollto" href="index.html">Home</a></li>
@@ -20,9 +25,18 @@
           </form>
         </li>
       </ul>
-      <button class="mobile-nav-toggle" type="button" aria-label="Toggle navigation">
-        <i class="bi bi-list"></i>
-      </button>
+      <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
   </div>
 </header><!-- End Header -->
+<style>
+  /* Hide hamburger by default, show only on mobile */
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  @media (max-width: 991px) {
+    .mobile-nav-toggle {
+      display: block !important;
+    }
+  }
+</style>

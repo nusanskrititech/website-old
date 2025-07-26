@@ -1,3 +1,60 @@
+/* Aggressive fix: Prevent navbar brand text from wrapping and allow ellipsis */
+.navbar .navbar-brand, .navbar-brand, .brand-text {
+  white-space: nowrap !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  display: block !important;
+  flex-shrink: 1 !important;
+}
+
+.navbar .container, .navbar .container-fluid {
+  flex-wrap: nowrap !important;
+}
+
+@media (max-width: 600px) {
+  .navbar .navbar-brand, .navbar-brand, .brand-text {
+    font-size: 1rem !important;
+    max-width: 80vw !important;
+  }
+}
+/* Force navbar brand text to never wrap and allow horizontal scroll if needed */
+.navbar .navbar-brand, .navbar-brand, .brand-text {
+  white-space: nowrap !important;
+  overflow-x: auto !important;
+  text-overflow: ellipsis !important;
+  display: inline-block !important;
+  max-width: 100vw;
+}
+
+/* Prevent flex container from wrapping brand text */
+.navbar, .navbar .container, .navbar .container-fluid {
+  flex-wrap: nowrap !important;
+}
+
+@media (max-width: 600px) {
+  .navbar .navbar-brand, .navbar-brand, .brand-text {
+    font-size: 1.05rem !important;
+    max-width: 80vw;
+  }
+}
+/* Prevent header text from wrapping on small screens */
+.navbar-brand, .navbar .navbar-brand, .navbar-header .navbar-brand, .navbar .brand-text, .brand-text {
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  max-width: 100vw;
+}
+
+@media (max-width: 600px) {
+  .navbar-brand, .navbar .navbar-brand, .navbar-header .navbar-brand, .navbar .brand-text, .brand-text {
+    font-size: 1.1rem !important;
+    letter-spacing: 0.01em;
+    max-width: 80vw;
+  }
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/

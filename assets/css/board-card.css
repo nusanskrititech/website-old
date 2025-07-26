@@ -1,0 +1,98 @@
+/* Board Member Card Styles */
+.board-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(16, 110, 234, 0.10), 0 1.5px 6px rgba(0,0,0,0.04);
+  padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+  margin: 1.2rem auto;
+  max-width: 340px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.board-card:hover {
+  box-shadow: 0 8px 32px rgba(16, 110, 234, 0.18), 0 2px 8px rgba(0,0,0,0.08);
+  transform: translateY(-4px) scale(1.025);
+}
+.board-card .board-position {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(90deg, #f68121 60%, #106eea 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.45rem 1.2rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(16,110,234,0.10);
+  letter-spacing: 0.04em;
+  z-index: 2;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+.board-card .board-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 70%;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(16,110,234,0.13);
+  border: 4px solid #fff;
+  margin-top: 1.2rem;
+  margin-bottom: 1.1rem;
+  background: #f8fafc;
+}
+.board-card .board-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+.board-card .board-socials {
+  margin: 0.5rem 0 0.2rem 0;
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+}
+.board-card .board-socials a {
+  color: #106eea;
+  background: #f1f6fe;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 1px 4px rgba(16,110,234,0.07);
+}
+.board-card .board-socials a:hover {
+  background: #106eea;
+  color: #fff;
+}
+.board-card .board-bio {
+  font-size: 0.98rem;
+  color: #444;
+  margin-top: 0.7rem;
+  text-align: center;
+  line-height: 1.5;
+  min-height: 2.2em;
+}
+@media (max-width: 600px) {
+  .board-card {
+    max-width: 98vw;
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+  }
+  .board-card .board-position {
+    font-size: 0.98rem;
+    padding: 0.35rem 0.9rem;
+  }
+  .board-card .board-photo {
+    width: 82px;
+    height: 82px;
+  }
+}

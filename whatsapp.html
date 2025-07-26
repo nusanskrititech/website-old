@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="theme-color" content="#000000" />
+  <title>Join WhatsApp Community | NU Sanskriti</title>
+  <meta content="Join the NU Sanskriti WhatsApp Community" name="description">
+  <meta content="NU Sanskriti Northeastern University, WhatsApp, Community" name="keywords">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:300,400,500,700|Poppins:300,400,500,600,700" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <!-- ======= Header (Dynamic Include) ======= -->
+  <div data-include="navbar.html"></div>
+  <main id="main">
+    <div class="container py-5" style="background: #fff; color: #222; border-radius: 1.5rem; margin-top: 2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 32px rgba(7,59,76,0.08); max-width: 700px;">
+      <div class="text-center mb-4">
+        <h1 class="display-5 fw-bold mb-3" style="color: #25D366;">Join Our WhatsApp Community</h1>
+        <p class="lead mx-auto" style="max-width: 600px; color: #444;">Stay connected, get updates, and be a part of the NU Sanskriti family on WhatsApp!</p>
+      </div>
+      <div class="alert alert-warning text-center mb-4" style="font-size:1.08rem; font-weight:500; border-radius:0.9rem;">
+        <i class="bi bi-exclamation-triangle-fill" style="color:#d97706; font-size:1.3em; vertical-align:-0.15em;"></i>
+        &nbsp;This community is <b>heavily moderated</b> to avoid spam and maintain a safe environment. Please make sure you read and follow the guidelines below. Violations will result in removal from the community.
+      </div>
+      <div class="mb-4" style="height: 480px; max-width: 100%; border-radius: 1rem; overflow: hidden; box-shadow: 0 2px 12px rgba(7,59,76,0.06);">
+        <div style="position:relative; width:100%; height:100%;">
+          <iframe id="chatPolicyFrame" src="" width="100%" height="100%" style="border: none; min-height:480px; background:#fff;" allowfullscreen loading="lazy"></iframe>
+          <div id="chatPolicyError" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:#fff; color:#800000; font-weight:600; font-size:1.1rem; align-items:center; justify-content:center; text-align:center; padding:2rem; border-radius:1rem;">
+            Unable to load the chat policy document.<br>
+            <a id="chatPolicyFallback" href="#" target="_blank" style="color:#118AB2; text-decoration:underline;">Open policy in a new tab</a>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <form id="joinWhatsappForm" class="w-100" style="max-width:420px; margin:auto;">
+          <div class="mb-3">
+            <label for="userName" class="form-label fw-semibold">Your Full Name <span style="color:#d00">*</span></label>
+            <input type="text" class="form-control form-control-lg" id="userName" name="userName" placeholder="Enter your name" required autocomplete="name">
+          </div>
+          <button type="submit" class="btn btn-success btn-lg w-100" style="font-weight:700; border-radius:1rem; font-size:1.2rem;">I Agree & Join WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <!-- ======= Footer (Dynamic Include) ======= -->
+  <div data-include="footer.html"></div>
+  <script src="include.js"></script>
+  <script src="assets/global-links.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+
+    // Set chat policy iframe src from global links and handle errors
+    function setChatPolicyLink() {
+      var chatPolicyLink = (window.DEFAULT_LINKS && window.DEFAULT_LINKS.CHAT_POLICY_LINK) ||
+        (typeof DEFAULT_LINKS !== 'undefined' && DEFAULT_LINKS.CHAT_POLICY_LINK) ||
+        'https://docs.google.com/document/d/e/2PACX-1vRpvl1rwuQf_e9L_p2jDZKC4k-zkCUOaJ4x1JzonQ2p9bYr0l3b9TR5gAW9fP6FuGyaGde1HDLOYYVs/pub';
+      if (window.applyLinks && typeof window.applyLinks === 'function') {
+        try {
+          const links = window.LINKS || window.DEFAULT_LINKS || {};
+          if (links.CHAT_POLICY_LINK) chatPolicyLink = links.CHAT_POLICY_LINK;
+        } catch(e) {}
+      }
+      var iframe = document.getElementById('chatPolicyFrame');
+      var errorDiv = document.getElementById('chatPolicyError');
+      var fallbackLink = document.getElementById('chatPolicyFallback');
+      iframe.src = chatPolicyLink;
+      fallbackLink.href = chatPolicyLink;
+      // Show error if iframe fails to load (timeout or error)
+      var loaded = false;
+      function showError() {
+        if (!loaded) {
+          errorDiv.style.display = 'flex';
+          iframe.style.display = 'none';
+        }
+      }
+      iframe.onload = function() {
+        loaded = true;
+        errorDiv.style.display = 'none';
+        iframe.style.display = 'block';
+      };
+      // Timeout after 6 seconds if not loaded
+      setTimeout(showError, 6000);
+    }
+    document.addEventListener('DOMContentLoaded', setChatPolicyLink);
+
+    // Inline form submission for name collection and WhatsApp join
+    document.getElementById('joinWhatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('userName').value.trim();
+      if (!name) {
+        document.getElementById('userName').focus();
+        return;
+      }
+      // Use the global variable set by global-links.js
+      var whatsappLink = window.WHATSAPP_COMMUNITY_LINK || '';
+      if (!whatsappLink || whatsappLink.indexOf('replace_with_actual_link') !== -1 || whatsappLink === './whatsapp.html') {
+        alert('WhatsApp group link is not configured. Please contact the admin.');
+        return;
+      }
+      window.location.href = whatsappLink;
+    });
+  </script>
+</body>
+</html>

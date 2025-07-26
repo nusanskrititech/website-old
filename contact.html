@@ -22,7 +22,17 @@
 </head>
 <body>
   <!-- ======= Header ======= -->
-<div data-include="navbar.html"></div>
+<div id="navbar-include"></div>
+<script>
+  // Ensure navbar loads dynamically
+  window.addEventListener('DOMContentLoaded', function() {
+    fetch('navbar.html')
+      .then(resp => resp.text())
+      .then(html => {
+        document.getElementById('navbar-include').innerHTML = html;
+      });
+  });
+</script>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center position-relative" style="background: url('assets/img/new_student_hero.jpg') center center/cover no-repeat; min-height: 60vh;">
@@ -35,18 +45,19 @@
   </section>
   <!-- ======= Contact Section ======= -->
   <main id="main">
+        <div id="faq-dynamic-section" class="container mt-5"></div>
+
     <section id="contact-section" class="contact section-bg py-5">
       <div class="container" data-aos="fade-up">
   <!-- ======= Header (Dynamic Include) ======= -->
-  <div data-include="navbar.html"></div>
                 </div>
               </div>
             </div>
             <!-- Primary Contact: Email -->
-            <div class="contact-email-box text-center mb-4">
-              <h4 class="mb-2">Email Us Directly</h4>
+            <div class="contact-email-box text-center mb-4" style="background:#fff; border-radius:1rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); padding:2rem 1rem;">
+              <h4 class="mb-2" style="color:#800000;">Still have questions? Email us directly</h4>
               <a href="mailto:namaste@nusanskriti.org" class="btn btn-lg btn-primary px-4 py-2 mb-2" style="font-size:1.2rem; letter-spacing:0.5px;">namaste@nusanskriti.org</a>
-              <div class="text-muted" style="font-size:1rem;">You will hear back from us! Email to namaste@nusanskriti.org</div>
+              <div class="text-muted" style="font-size:1rem; color:#333;">You will hear back from us! Email to namaste@nusanskriti.org</div>
             </div>
             <!-- Or use the form below -->
             <div class="text-center mb-3 text-muted" style="font-size:1.1rem;">Or use the form below:</div>
@@ -72,6 +83,11 @@
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
+            <div class="mb-4 text-center">
+              <a href="whatsapp.html" class="btn btn-success btn-lg fw-bold shadow" style="border-radius:2rem; font-size:1.2rem;">
+                <i class="bi bi-whatsapp me-2"></i>Join our WhatsApp Community
+              </a>
+            </div>
             <div class="social-links mt-4 text-center">
               <a href="https://go.nusanskriti.org/linkedIn-website" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               <a href="https://go.nusanskriti.org/slack-website" class="slack"><i class="bx bxl-slack"></i></a>
@@ -85,14 +101,33 @@
   </main>
   <!-- ======= Footer (Dynamic Include) ======= -->
   <div data-include="footer.html"></div>
-  <script src="include.js"></script>
-  <script src="assets/global-links.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Simple markdown FAQ loading for contact page
+    const FAQ_MARKDOWN_URL = 'assets/generalfaq.md';
+    async function loadMarkdownFaq(url) {
+      const preview = document.getElementById('faq-dynamic-section');
+      preview.innerHTML = '<span class="text-secondary">Loading FAQ...</span>';
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error('Could not fetch file.');
+        const text = await resp.text();
+        preview.innerHTML = marked.parse(text);
+      } catch (e) {
+        preview.innerHTML = `<span class="text-danger">Error loading FAQ: ${e.message}`;
+      }
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      loadMarkdownFaq(FAQ_MARKDOWN_URL);
+    });
+  </script>
 </body>
 </html>

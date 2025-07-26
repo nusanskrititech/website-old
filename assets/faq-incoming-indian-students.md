@@ -10,8 +10,12 @@ Moving to a new country is a huge step, filled with excitement and a few challen
 
 ### **TL;DR: The Absolute Essentials**
 
+
 For those in a hurry, here are the most critical things to remember:
 
+* **Stay Connected:**
+    * Follow us on [Instagram @nusanskriti](https://instagram.com/nusanskriti)
+    * Join our [WhatsApp Community](./whatsapp.html) for real-time updates, roommate search, and questions
 * **Documents:** Keep your I-20, Passport (with Visa), and NU Admission Letter in your carry-on bag at all times. Have digital copies on your phone/cloud storage.
 * **Arrival:** Land at Boston Logan Airport (BOS). The easiest way to your apartment is an **Uber/Lyft**. The cheapest way is the **free Silver Line (SL1) bus**.
 * **Housing:** **NEVER** pay a deposit or sign a lease for an off-campus apartment without seeing it (or having a trusted friend do a video tour) and having the lease reviewed for free by **NU's Off-Campus Student Services (OCSS)**. Housing scams are very common.
@@ -52,7 +56,7 @@ This is the planning stage. Ticking these off will save you a lot of stress late
 * [ ] **Financial Prep:**
     * [ ] Inform your Indian bank (e.g., HDFC, ICICI) about your international travel to enable your debit/credit cards.
     * [ ] Arrange for US currency. Carrying around $500 - $700 in cash is generally a good idea for immediate expenses. A Forex card is a great, secure option for larger amounts.
-* [ ] **Connect with the Community:** Join official NU Sanskriti and other incoming student WhatsApp groups. This is the best place for real-time updates, finding roommates, and asking questions.
+* [ ] **Connect with the Community:** Join official NU Sanskriti and other incoming student WhatsApp groups. [Click here to join the WhatsApp community &rarr;](./whatsapp.html) This is the best place for real-time updates, finding roommates, and asking questions.
 * [ ] **Initial Housing Research:** Start looking at Boston neighborhoods online. Use the resources in the [Housing Section](#deep-dive-housing-in-boston) of this guide. **Do not sign a lease or pay a deposit without getting it reviewed by NU's Off-Campus Student Services (OCSS)!**
 
 ---
@@ -300,8 +304,9 @@ A: An SSN (Social Security Number) is a unique identification number issued by t
     * Email: [namaste@nusanskriti.org](mailto:namaste@nusanskriti.org)
     * Instagram: [@nusanskriti](https://instagram.com/nusanskriti)
     * Website: [nusanskriti.org](https://nusanskriti.org)
-* **University Offices:**
+* **University and other Offices:**
     * [Office of Global Services (OGS)](https://international.northeastern.edu/)
+    * [Indian Embassy at New York](https://www.indianembassyusa.gov.in/)
     * [Off-Campus Student Services (OCSS)](https://offcampus.northeastern.edu/)
     * [University Health and Counseling (UHCS)](https://wellness.northeastern.edu/)
     * [Husky Card Services](https://huskycard.northeastern.edu/)

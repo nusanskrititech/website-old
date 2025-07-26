@@ -9,7 +9,7 @@
             Northeastern University<br>
             360 Huntington Ave<br>
             Boston, MA 02115<br><br>
-            <strong>Email:</strong> <a data-link="email"></a><br>
+            <strong>Email:</strong> <a href="mailto:namaste@nusanskriti.org">namaste@nusanskriti.org</a><br>
           </p>
         </div>
         <div class="col-lg-3 col-md-6 footer-links">
@@ -27,7 +27,7 @@
           <p>Do Follow Us!!</p>
           <div class="social-links mt-3">
             <a data-link="linkedin" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            <a data-link="slack" class="slack"><i class="bx bxl-slack"></i></a>
+            <a href="whatsapp.html" data-link="whatsapp" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
             <a data-link="facebook" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
             <a data-link="instagram" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
           </div>
@@ -38,9 +38,46 @@
   <div class="container py-4">
     <div class="copyright">
       &copy; Copyright <strong><span>NU Sanskriti</span></strong>. All Rights Reserved
-    </div>
-    <div class="text-center mt-2" id="version-info">
-      <!-- Version info will be populated by global-links.js -->
+      <br>
+      <span class="footer-meta">Version: 1.0.0 | Last updated: July 25, 2025</span>
     </div>
   </div>
 </footer>
+<!-- Ensure Boxicons CSS is loaded for social icons -->
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<script src="assets/global-links.js"></script>
+<script>
+  // Dynamically set social links and version info from global-links.js
+  window.addEventListener('DOMContentLoaded', function() {
+    if (window.DEFAULT_LINKS) {
+      document.querySelectorAll('[data-link="linkedin"]').forEach(el => el.href = window.DEFAULT_LINKS.LINKEDIN_URL);
+      document.querySelectorAll('[data-link="whatsapp"]').forEach(el => el.href = window.DEFAULT_LINKS.WHATSAPP_COMMUNITY_LINK || '#');
+      document.querySelectorAll('[data-link="facebook"]').forEach(el => el.href = window.DEFAULT_LINKS.FACEBOOK_URL);
+      document.querySelectorAll('[data-link="instagram"]').forEach(el => el.href = window.DEFAULT_LINKS.INSTAGRAM_URL);
+      // Version info
+      const versionMeta = document.querySelector('.footer-meta');
+      if (versionMeta) {
+        versionMeta.textContent = `Version: ${window.DEFAULT_LINKS.VERSION} | Last updated: ${window.DEFAULT_LINKS.BUILD_DATE} | Build: ${window.DEFAULT_LINKS.BUILD_ID}`;
+      }
+    }
+  });
+</script>
+<style>
+  /* Make sure .footer selector matches the actual footer element */
+  #footer .social-links a {
+    color: #FFD166 !important;
+    font-size: 2rem;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  #footer .social-links a:hover {
+    color: #38BDF8 !important;
+  }
+  #footer .social-links i {
+    color: inherit !important;
+    font-size: inherit;
+    vertical-align: middle;
+  }
+</style>

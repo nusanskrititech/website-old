@@ -18,6 +18,8 @@ const DEFAULT_LINKS = {
   CONTACT_URL: "./contact.html",
   JOIN_THE_CREW_URL: "https://go.nusanskriti.org/join-the-crew-website",
   JOINUS_POLICY_PDF_URL: "https://drive.google.com/file/d/1A2B3C4D5E6F7G8H9I0J/view?usp=sharing",
+  WHATSAPP_COMMUNITY_LINK: "./whatsapp.html",
+  CHAT_POLICY_LINK: "",
   GOOGLE_ANALYTICS_ID: "G-CWQ5EFFNDN", //for temporary.nusanskriti.org
   //GOOGLE_ANALYTICS_ID: "G-QP94LJCKGP" // for nusanskriti.org 
   VERSION: "v2.1.3",
@@ -58,6 +60,9 @@ function applyLinks(links) {
   
   // Update version information
   updateVersionInfo(links);
+
+  // Publish WhatsApp community link as a global variable
+  window.WHATSAPP_COMMUNITY_LINK = links.WHATSAPP_COMMUNITY_LINK;
 }
 
 function updateVersionInfo(links) {
